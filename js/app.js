@@ -1,4 +1,4 @@
-// Redesigned by t.me/TheFirstSpeedster from https://github.com/ParveenBhadooOfficial/Google-Drive-Index which was written by someone else, credits are given on Source Page.
+// Redesigned by t.me/deusex_x from https://github.com/coccobellof5/Google-Drive-Index which was written by someone else, credits are given on Source Page.
 // v2.0.18
 // Initialize the page
 function init() {
@@ -15,7 +15,7 @@ function init() {
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="SearchModelLabel"></h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Chiudi">
           <span aria-hidden="true"></span>
         </button>
       </div>
@@ -27,7 +27,7 @@ function init() {
   </div>
 </div>
 <br>
-<footer class="footer mt-auto py-3 text-muted ${UI.footer_style_class}" style="${UI.fixed_footer ?'position: fixed; ': ''}left: 0; bottom: 0; width: 100%; color: white; z-index: 9999;"> <div class="container" style="width: auto; padding: 0 10px;"> <p class="float-end"> <a href="#">Back to top</a> </p> ${UI.credit ? '<p>Redesigned with <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-heart-fill" fill="red" xmlns="http://www.w3.org/2000/svg"> <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" /> </svg> by <a href="https://github.com/ParveenBhadooOfficial/Google-Drive-Index" target="_blank">TheFirstSpeedster</a>, based on Open Source Softwares.</p>' : ''} <p>© ${UI.copyright_year} - <a href=" ${UI.company_link}" target="_blank"> ${UI.company_name}</a>, All Rights Reserved.</p> </div> </footer>
+<footer class="footer mt-auto py-3 text-muted ${UI.footer_style_class}" style="${UI.fixed_footer ?'position: fixed; ': ''}left: 0; bottom: 0; width: 100%; color: white; z-index: 9999;"> <div class="container" style="width: auto; padding: 0 10px;"> <p class="float-end"> <a href="#">Back to top</a> </p> ${UI.credit ? '<p>Creato dal vostro Deus Ex <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-heart-fill" fill="red" xmlns="http://www.w3.org/2000/svg"> <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" /> </svg></p>' : ''} <p>© ${UI.copyright_year} - <a href=" ${UI.company_link}" target="_blank"> ${UI.company_name}</a>, Diritti Riservati.</p> </div> </footer>
   `;
     $('body').html(html);
 }
@@ -188,8 +188,8 @@ function nav(path) {
     var search_bar = `
 </ul>
 <form class="d-flex" method="get" action="/${cur}:search">
-<input class="form-control me-2" name="q" type="search" placeholder="Search" aria-label="Search" value="${search_text}" required>
-<button class="btn ${UI.search_button_class}" onclick="if($('#search_bar_form>input').val()) $('#search_bar_form').submit();" type="submit">Search</button>
+<input class="form-control me-2" name="q" type="search" placeholder="Search" aria-label="Cerca" value="${search_text}" required>
+<button class="btn ${UI.search_button_class}" onclick="if($('#search_bar_form>input').val()) $('#search_bar_form').submit();" type="submit">Cerca</button>
 </form>
 </div>
 </div>
@@ -288,7 +288,7 @@ function list(path) {
   </div>
     <div id="list" class="list-group text-break">
     </div>
-  	<div class="${UI.file_count_alert_class} text-center d-none" role="alert" id="count">Total <span class="number text-center"></span> items</div>
+  	<div class="${UI.file_count_alert_class} text-center d-none" role="alert" id="count">File <span class="number text-center"></span> totali</div>
     <div id="readme_md" style="display:none; padding: 20px 20px;"></div>
     </div>
     `;
@@ -713,13 +713,13 @@ function onSearchResultItemClick(a_ele) {
             }
             title = `Result`;
             $('#SearchModelLabel').html(title);
-            content = `<a class="btn btn-info" href="${ehrefurl}">Open</a> <a class="btn btn-secondary" href="${ehrefurl}" target="_blank">Open in New Tab</a>`;
+            content = `<a class="btn btn-info" href="${ehrefurl}">Apri</a> <a class="btn btn-secondary" href="${ehrefurl}" target="_blank">Apri in una nuova scheda</a>`;
             $('#modal-body-space').html(content);
             return;
         }
-        title = `Failed`;
+        title = `Fallito`;
         $('#SearchModelLabel').html(title);
-        content = `System Failed to Fetch the File/Folder Link, Please close and try again.`;
+        content = `Impossibile recuperare file o cartella, chiudi e riprova.`;
         $('#modal-body-space').html(content);
     })
 }
@@ -938,6 +938,8 @@ function file_video(path) {
     <track kind="captions" label="French" src="${caption}.fr.vtt" srclang="fr" />
     <track kind="captions" label="Chinese" src="${caption}.zh.vtt" srclang="zh" />
     <track kind="captions" label="Arabic" src="${caption}.ar.vtt" srclang="ar" />
+    <track kind="captions" label="Italiano Forzato" src="${caption}.it.forzato.vtt" srclang="it" />
+    <track kind="captions" label="Italiano" src="${caption}.it.vtt" srclang="it" />
 	<track kind="captions" label="${UI.custom_srt_lang}" src="${caption}.${UI.custom_srt_lang}.vtt" srclang="${UI.custom_srt_lang}" />
 	</video>
   </div>
@@ -1144,7 +1146,7 @@ function file_pdf(path) {
         <a class="dropdown-item" href="intent:${url}#Intent;component=idm.internet.download.manager.plus/idm.internet.download.manager.Downloader;S.title=${decodename};end">1DM+ (Plus)</a>
       </div>
   </div>
-  <button onclick="copyFunction()" onmouseout="outFunc()" class="btn btn-success"> <span class="tooltiptext" id="myTooltip">Copy</span> </button></div><br>
+  <button onclick="copyFunction()" onmouseout="outFunc()" class="btn btn-success"> <span class="tooltiptext" id="myTooltip">Copia</span> </button></div><br>
   </div>
   </div>
   </div>
@@ -1199,9 +1201,9 @@ function file_image(path) {
       		}
             targetText = `
 
-                              ${prevchild ? `<a class="btn btn-primary" href="${prev_child}?a=view" role="button">Previous</a>` : ``}
+                              ${prevchild ? `<a class="btn btn-primary" href="${prev_child}?a=view" role="button">Indietro</a>` : ``}
 
-                              ${nextchild ? `<a class="btn btn-primary" href="${next_child}?a=view" role="button">Next</a>` : ``}
+                              ${nextchild ? `<a class="btn btn-primary" href="${next_child}?a=view" role="button">Avanti</a>` : ``}
 
                   `;
     }
@@ -1238,7 +1240,7 @@ function file_image(path) {
         <a class="dropdown-item" href="intent:${url}#Intent;component=idm.internet.download.manager.plus/idm.internet.download.manager.Downloader;S.title=${decodename};end">1DM+ (Plus)</a>
       </div>
   </div>
-  <button onclick="copyFunction()" onmouseout="outFunc()" class="btn btn-success"> <span class="tooltiptext" id="myTooltip">Copy</span> </button></div><br>
+  <button onclick="copyFunction()" onmouseout="outFunc()" class="btn btn-success"> <span class="tooltiptext" id="myTooltip">Copia</span> </button></div><br>
   </div>
   </div>
   </div>
