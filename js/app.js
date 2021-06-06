@@ -807,7 +807,7 @@ function file_others(path) {
 <div class="card-body">
 <div class="input-group mb-4">
   <div class="input-group-prepend">
-    <span class="input-group-text" id="">Full URL</span>
+    <span class="input-group-text" id="">Link completo</span>
   </div>
   <input type="text" class="form-control" id="dlurl" value="${url}">
 </div>
@@ -867,7 +867,7 @@ function file_code(path) {
 <div class="card-body">
 <div class="input-group mb-4">
   <div class="input-group-prepend">
-    <span class="input-group-text" id="">Full URL</span>
+    <span class="input-group-text" id="">Link Completo</span>
   </div>
   <input type="text" class="form-control" id="dlurl" value="${url}">
 </div>
@@ -938,8 +938,8 @@ function file_video(path) {
     <track kind="captions" label="French" src="${caption}.fr.vtt" srclang="fr" />
     <track kind="captions" label="Chinese" src="${caption}.zh.vtt" srclang="zh" />
     <track kind="captions" label="Arabic" src="${caption}.ar.vtt" srclang="ar" />
-    <track kind="captions" label="Italiano Forzato" src="${caption}.it.forzato.vtt" srclang="it" />
     <track kind="captions" label="Italiano" src="${caption}.it.vtt" srclang="it" />
+    <track kind="captions" label="Italiano Forzato" src="${caption}.it.forzato.vtt" srclang="it" />
 	<track kind="captions" label="${UI.custom_srt_lang}" src="${caption}.${UI.custom_srt_lang}.vtt" srclang="${UI.custom_srt_lang}" />
 	</video>
   </div>
@@ -951,7 +951,7 @@ ${UI.disable_video_download ? `` : `
 <div class="card-body">
 <div class="input-group mb-4">
   <div class="input-group-prepend">
-    <span class="input-group-text" id="">Full URL</span>
+    <span class="input-group-text" id="">Link Completo</span>
   </div>
   <input type="text" class="form-control" id="dlurl" value="${url}">
 </div>
@@ -1015,7 +1015,7 @@ function file_audio(path) {
   <div class="card-body">
 <div class="input-group mb-4">
   <div class="input-group-prepend">
-    <span class="input-group-text" id="">Full URL</span>
+    <span class="input-group-text" id="">Link Completo</span>
   </div>
   <input type="text" class="form-control" id="dlurl" value="${url}">
 </div>
@@ -1129,7 +1129,7 @@ function file_pdf(path) {
   <div class="card-body">
 <div class="input-group mb-4">
   <div class="input-group-prepend">
-    <span class="input-group-text" id="">Full URL</span>
+    <span class="input-group-text" id="">Link Completo</span>
   </div>
   <input type="text" class="form-control" id="dlurl" value="${url}">
 </div>
@@ -1223,7 +1223,7 @@ function file_image(path) {
   <div class="card-body">
 <div class="input-group mb-4">
   <div class="input-group-prepend">
-    <span class="input-group-text" id="">Full URL</span>
+    <span class="input-group-text" id="">Link Completo</span>
   </div>
   <input type="text" class="form-control" id="dlurl" value="${url}">
 </div>
