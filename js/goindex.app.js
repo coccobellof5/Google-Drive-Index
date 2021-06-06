@@ -85,7 +85,7 @@ function title(path) {
   // $('title').html(document.siteName + ' - ' + path);
   var model = window.MODEL;
   if (model.is_search_page)
-    $('title').html(`${document.siteName} - ${drive_name} - Search results for ${model.q} `);
+    $('title').html(`${document.siteName} - ${drive_name} - Risultati della ricerca ${model.q} `);
   else
     $('title').html(`${document.siteName} - ${drive_name} - ${path}`);
 }
@@ -135,7 +135,7 @@ function nav(path) {
                 <i class="mdui-icon material-icons">search</i>
             </button>
             <form id="search_bar_form" method="get" action="/${cur}:search">
-            <input class="mdui-textfield-input" type="text" name="q" placeholder="Search in current drive" value="${search_text}"/>
+            <input class="mdui-textfield-input" type="text" name="q" placeholder="Cerca in questa cartella" value="${search_text}"/>
             </form>
             <button class="mdui-textfield-close mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">chiudi</i></button>
         </div>`;
@@ -205,15 +205,15 @@ function list(path) {
 	   <li class="mdui-list-item th"> 
 	    <div class="mdui-col-xs-12 mdui-col-sm-7">
 	     File
-	<i class="mdui-icon material-icons icon-sort" data-sort="name" data-order="more">expand_more</i>
+	<i class="mdui-icon material-icons icon-sort" data-sort="name" data-order="more">vedi altri</i>
 	    </div> 
 	    <div class="mdui-col-sm-3 mdui-text-right">
 	     Ultima modifica
-	<i class="mdui-icon material-icons icon-sort" data-sort="date" data-order="downward">expand_more</i>
+	<i class="mdui-icon material-icons icon-sort" data-sort="date" data-order="downward">vedi altri</i>
 	    </div> 
 	    <div class="mdui-col-sm-2 mdui-text-right">
 	     Dimensioni
-	<i class="mdui-icon material-icons icon-sort" data-sort="size" data-order="downward">expand_more</i>
+	<i class="mdui-icon material-icons icon-sort" data-sort="size" data-order="downward">vedi altri</i>
 	    </div> 
 	    </li> 
 	  </ul> 
@@ -439,15 +439,15 @@ function render_search_result_list() {
 	   <li class="mdui-list-item th"> 
 	    <div class="mdui-col-xs-12 mdui-col-sm-7">
 	     Files
-	<i class="mdui-icon material-icons icon-sort" data-sort="name" data-order="more">expand_more</i>
+	<i class="mdui-icon material-icons icon-sort" data-sort="name" data-order="more">vedi altro</i>
 	    </div> 
 	    <div class="mdui-col-sm-3 mdui-text-right">
 	     Ultima modifica
-	<i class="mdui-icon material-icons icon-sort" data-sort="date" data-order="downward">expand_more</i>
+	<i class="mdui-icon material-icons icon-sort" data-sort="date" data-order="downward">vedi altro</i>
 	    </div> 
 	    <div class="mdui-col-sm-2 mdui-text-right">
 	     Dimensioni
-	<i class="mdui-icon material-icons icon-sort" data-sort="size" data-order="downward">expand_more</i>
+	<i class="mdui-icon material-icons icon-sort" data-sort="size" data-order="downward">vedi altro</i>
 	    </div> 
 	    </li> 
 	  </ul> 
@@ -604,7 +604,7 @@ function onSearchResultItemClick(a_ele) {
   var cur = window.current_drive_order;
   var dialog = mdui.dialog({
     title: '',
-    content: '<div class="mdui-text-center mdui-typo-title mdui-m-b-1">Getting target path...</div><div class="mdui-spinner mdui-spinner-colorful mdui-center"></div>',
+    content: '<div class="mdui-text-center mdui-typo-title mdui-m-b-1">Ottieni percorso destinazione...</div><div class="mdui-spinner mdui-spinner-colorful mdui-center"></div>',
     // content: '<div class="mdui-spinner mdui-spinner-colorful mdui-center"></div>',
     history: false,
     modal: true,
@@ -640,8 +640,8 @@ function onSearchResultItemClick(a_ele) {
     }
     dialog.close();
     dialog = mdui.dialog({
-      title: '<i class="mdui-icon material-icons">&#xe811;</i> Failed to get the target path',
-      content: 'It may be because this item does not exist in the disc! It may also be because the file [Shared with me] has not been added to Personal Drive!',
+      title: '<i class="mdui-icon material-icons">&#xe811;</i> Impossibile ottenere il percorso di destinazione',
+      content: 'Potrebbe non esistere questo elemento o il file disco condiviso non funzionante.',
       history: false,
       modal: true,
       closeOnEsc: true,
@@ -811,7 +811,7 @@ function file_video(path) {
   $('#content').html(content);
   $('#copy-link').on('click', () => {
     copyToClipboard(url);
-    mdui.snackbar('Copied to clipboard!');
+    mdui.snackbar('Copiato!');
   });
 }
 
